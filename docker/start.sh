@@ -211,7 +211,7 @@ trap cleanup SIGTERM SIGINT SIGQUIT
 
 # Wait for backend to be ready
 info "Waiting for backend to be ready..."
-for i in {1..30}; do
+for i in {1..120}; do
     if curl -s "http://127.0.0.1:${BACKEND_PORT}/api/v1/health" > /dev/null 2>&1; then
         status "Backend is ready (PID: $BACKEND_PID)"
         break
