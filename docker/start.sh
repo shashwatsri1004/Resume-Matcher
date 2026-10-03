@@ -220,8 +220,8 @@ for i in {1..120}; do
         error "Backend process (PID: $BACKEND_PID) died during startup"
         exit 1
     fi
-    if [ $i -eq 30 ]; then
-        error "Backend failed to start within 30 seconds"
+    if [ $i -eq 120 ]; then
+        error "Backend failed to start within 120 seconds"
         exit 1
     fi
     sleep 1
